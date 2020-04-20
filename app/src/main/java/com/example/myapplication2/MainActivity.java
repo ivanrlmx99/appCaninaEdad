@@ -28,8 +28,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String ageString=ageDog.getText().toString();
-                int edadInt=Integer.parseInt(ageString);
-                answerText.setText("SI FUERAS PERRO TU EDAD SERIA:"+(edadInt*6));
+                try{
+                    int edadInt=Integer.parseInt(ageString);
+                    answerText.setText("SI FUERAS PERRO TU EDAD SERIA:"+(edadInt*6));
+                }catch (NumberFormatException ex){
+                    answerText.setText("Ingresa numeros");
+                }
+
             }
         });
 
